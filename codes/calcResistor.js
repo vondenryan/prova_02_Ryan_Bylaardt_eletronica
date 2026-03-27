@@ -28,7 +28,9 @@ function CalcularResistor(numFaixas, coresFaixas) {
 
     valorResistor = parseInt(valorResistor) * cores[coresFaixas[3]].mult;
 
-    if(valorResistor >= 1_000_000) {
+    if(valorResistor >= 1_000_000_000) {
+        valorResistor = `${valorResistor / 10**9} GΩ`;
+    } else if(valorResistor >= 1_000_000) {
         valorResistor = `${valorResistor / 10**6} MΩ`;
     } else if(valorResistor >= 1_000) {
         valorResistor = `${valorResistor / 10**3} kΩ`;
