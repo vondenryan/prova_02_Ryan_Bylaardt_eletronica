@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Resistores</title>
+    <link rel="stylesheet" href="../styles/resistor.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h2>Identificador de Resistor</h2>
+            <p>Selecione as cores das faixas</p>
+        </header>
+
+        <div class="type-selector">
+            <input type="radio" id="f4" name="tipo" value="4" checked onclick="atualizarInterface(4)">
+            <label for="f4">4 Faixas</label>
+            <input type="radio" id="f5" name="tipo" value="5" checked onclick="atualizarInterface(5)">
+            <label for="f5">5 Faixas</label>
+        </div>
+
+        <div class="resistor-preview">
+            <div class="wire"></div>
+            <div class="resistor-body">
+                <div id="v-band1" class="band color-brown"></div>
+                <div id="v-band2" class="band color-black"></div>
+                <div id="v-band3" class="band color-red"></div>
+                <div id="v-band4" class="band color-orange"></div>
+                <div id="v-band5" class="band color-gold"></div>
+            </div>
+            <div class="wire"></div>
+        </div>
+
+        <div class="selectors-grid">
+            <div class="input-field">
+                <label>1ª Faixa</label>
+                <select id="sel-1">
+                    <option value="Preto">Preto</option>
+                    <option value="Preto">Marrom</option>
+                    <option value="Preto">Vermelho</option>
+                    <option value="Preto">Laranja</option>
+                    <option value="Preto">Amarelo</option>
+                    <option value="Preto">Verde</option>
+                    <option value="Preto">Azul</option>
+                    <option value="Preto">Violeta</option>
+                    <option value="Preto">Cinza</option>
+                    <option value="Preto">Branco</option>
+                </select>
+            </div>
+            <div class="input-field">
+                <label>2ª Faixa</label>
+                <select id="sel-2">
+                    <option value="Preto">Preto</option>
+                    <option value="Preto">Marrom</option>
+                    <option value="Preto">Vermelho</option>
+                    <option value="Preto">Laranja</option>
+                    <option value="Preto">Amarelo</option>
+                    <option value="Preto">Verde</option>
+                    <option value="Preto">Azul</option>
+                    <option value="Preto">Violeta</option>
+                    <option value="Preto">Cinza</option>
+                    <option value="Preto">Branco</option>
+                </select>
+            </div>
+            <div id="box-3" class="input-field" style="display: none;">
+                <label>3ª Faixa</label>
+                <select id="sel-3">
+                    <option value="Preto">Preto</option>
+                    <option value="Preto">Marrom</option>
+                    <option value="Preto">Vermelho</option>
+                    <option value="Preto">Laranja</option>
+                    <option value="Preto">Amarelo</option>
+                    <option value="Preto">Verde</option>
+                    <option value="Preto">Azul</option>
+                    <option value="Preto">Violeta</option>
+                    <option value="Preto">Cinza</option>
+                    <option value="Preto">Branco</option>
+                </select>
+            </div>
+            <div class="input-field">
+                <label>Multiplicador</label>
+                <select id="sel-mult">
+                    <option value="Preto">Preto</option>
+                    <option value="Preto">Marrom</option>
+                    <option value="Preto">Vermelho</option>
+                    <option value="Preto">Laranja</option>
+                    <option value="Preto">Amarelo</option>
+                    <option value="Preto">Verde</option>
+                    <option value="Preto">Azul</option>
+                    <option value="Preto">Violeta</option>
+                    <option value="Preto">Cinza</option>
+                    <option value="Preto">Branco</option>
+                    <option value="Preto">Dourado</option>
+                    <option value="Preto">Prata</option>
+                </select>
+            </div>
+            <div class="input-field">
+                <label>Tolerância</label>
+                <select id="sel-tol">
+                    <option value="Preto">Marrom (1%)</option>
+                    <option value="Preto">Vermelho (2%)</option>
+                    <option value="Preto">Verde (0.5%)</option>
+                    <option value="Preto">Azul (0.25%)</option>
+                    <option value="Preto">Violeta (0.1%)</option>
+                    <option value="Preto">Cinza (0.05%)</option>
+                    <option value="Preto">Dourado (5%)</option>
+                    <option value="Preto">Prata (10%)</option>
+                </select>
+            </div>
+        </div>
+
+        <button class="btn-calc" id="btn-calcular">Calcular Resistência</button>
+
+        <div class="display-screen">
+            <div class="result-item">
+                <small>Valor Nomial</small>
+                <Strong id="res-val">--- Ω</Strong>
+            </div>
+        </div>
+    </div>
+
+    <script src="../codes/calcResistor.js"></script>
+    <script src="../codes/mainResistor.js"></script>
+    <script>
+        function atualizarInterface(n) {
+            const b3Vis = document.getElementById("v-band3");
+            const b3Sel = document.getElementById("box-3");
+            const display = (n === 5) ? 'block' : 'none';
+
+            b3Vis.style.display = display;
+            b3Sel.style.display = display;
+        }
+    </script>
+</body>
+</html>

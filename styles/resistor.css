@@ -1,0 +1,130 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: #fff;
+    width: 90%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+header { text-align: center; margin-bottom: 25px; }
+header h2 { font-size: 1.25rem; color: #111; }
+header p { font-size: 0.8rem; color: #666; margin-top: 5px; }
+
+.type-selector {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.type-selector label {
+    padding: 10px 20px;
+    background: #f8f9fa;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.type-selector input:checked + label {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.type-selector input { display: none; }
+
+.resistor-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.resistor-body {
+    width: 130px;
+    height: 42px;
+    background: #e3c598;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    border: 2px solid #d4b483;
+}
+
+.wire { width: 30px; height: 4px; background: #ccd1d9; }
+.band { width: 8px; height: 100%; }
+
+.selectors-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.input-field label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #888;
+    margin-bottom: 5px;
+    display: block;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    font-size: 0.9rem;
+}
+
+.btn-calc {
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.btn-calc:active {
+    margin-top: 20px;
+    background: #cbdef1;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.display-screen {
+    margin-top: 20px;
+    background: #cbdef1;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.result-item small { color: #666; font-size: 0.75rem; }
+.result-item strong { display: block; font-size: 1.5rem; color: #000; margin-top: 5px; }
+
+.color-brown { background: #8b4513; }
+.color-black { background: #000; }
+.color-red { background: #d00; }
+.color-orange { background: #ff8c00; }
+.color-gold { background: #cfb53b; }
