@@ -1,16 +1,16 @@
 let cores = {
-    "preto": {val: 0, mult: 1, tolerancia: undefined},
-    "marrom": {val: 1, mult: 1, tolerancia: 1},
-    "vermelho": {val: 2, mult: 1, tolerancia: 1},
-    "laranja": {val: 3, mult: 1, tolerancia: undefined},
-    "amarelo": {val: 4, mult: 1, tolerancia: undefined},
-    "verde": {val: 5, mult: 1, tolerancia: 0.5},
-    "azul": {val: 6, mult: 1, tolerancia: 0.25},
-    "violeta": {val: 7, mult: 1, tolerancia: 0.1},
-    "cinza": {val: 8, mult: undefined, tolerancia: 0.05},
-    "branco": {val: 9, mult: undefined, tolerancia: undefined},
-    "dourado": {val: undefined, mult: 0.1, tolerancia: 1},
-    "prata": {val: undefined, mult: 0.01, tolerancia: 1},
+    "Preto": {val: 0, mult: 1, tolerancia: undefined},
+    "Marrom": {val: 1, mult: 10, tolerancia: 1},
+    "Vermelho": {val: 2, mult: 100, tolerancia: 2},
+    "Laranja": {val: 3, mult: 1_000, tolerancia: undefined},
+    "Amarelo": {val: 4, mult: 10_000, tolerancia: undefined},
+    "Verde": {val: 5, mult: 100_000, tolerancia: 0.5},
+    "Azul": {val: 6, mult: 1_000_000, tolerancia: 0.25},
+    "Violeta": {val: 7, mult: 10_000_000, tolerancia: 0.1},
+    "Cinza": {val: 8, mult: undefined, tolerancia: 0.05},
+    "Branco": {val: 9, mult: undefined, tolerancia: undefined},
+    "Dourado": {val: undefined, mult: 0.1, tolerancia: 5},
+    "Prata": {val: undefined, mult: 0.01, tolerancia: 10},
 }
 
 function CalcularResistor(numFaixas, coresFaixas) {
@@ -36,5 +36,6 @@ function CalcularResistor(numFaixas, coresFaixas) {
         valorResistor = `${valorResistor} Ω`;
     }
 
+    console.log(coresFaixas);
     return `${valorResistor} ±${cores[coresFaixas[4]].tolerancia}`;
 }

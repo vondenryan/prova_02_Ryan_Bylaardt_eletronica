@@ -10,7 +10,7 @@ let conversionTable = {
 }
 
 function ConversorMultSub() {
-    alert("Unidades disponiveis:\nG - M - K - base - m - u - n - p");
+    alert("Unidades disponiveis:\nG - M - k - base - m - u - n - p");
     let unidadeOrigem = prompt("Unidade de origem (deixe vazio para base): ") || "base";
     let unidadeDestino = prompt("Unidade de destino (deixe vazio para base): ") || "base";
     let grandeza = prompt("Digite a grandeza: ");
@@ -35,5 +35,5 @@ function conversor(origem, destino, val) {
     de = conversionTable[origem];
     para = conversionTable[destino];
 
-    return val * (10 ** (from - to));
+    return val * (10 ** (de - para));
 }

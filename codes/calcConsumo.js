@@ -3,7 +3,7 @@ function CalcularConsumo() {
     let opcao = parseInt(prompt("1. Watt\n2. KiloWatt\nDigite a opção: "));
     let potencia = parseFloat(prompt("Digite a potência: "));
     let tempo = parseInt(prompt("Digite o tempo de uso: "));
-    let taxa = parseInt(prompt("Digite o valor do Kwh: "));
+    let taxa = parseFloat(prompt("Digite o valor do kWh: "));
     let kwhMes, valor;
 
     switch(opcao) {
@@ -19,5 +19,5 @@ function CalcularConsumo() {
 
     valor = kwhMes * taxa;
 
-    console.log(`Eletrodomestico: ${elet}\nKwh Mês: ${kwhMes.toFixed(2)}\nValor: ${valor.toFixed(2)}`);
+    console.log(`Eletrodomestico: ${elet}\nkWh Mês: ${kwhMes.toFixed(2)}\nValor: ${valor.toFixed(2)}`);
 }
